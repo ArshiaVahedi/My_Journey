@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap of a Neuroscience Innovator - Arshia Vahedi, MD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Dark slate text */
+            line-height: 1.6;
+        }
+        .roadmap-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden; /* Ensure shadow is contained */
+        }
+        .roadmap-title {
+            font-size: 2.5rem; /* Larger title */
+            font-weight: 700;
+            color: #1e3a8a; /* Darker blue for title */
+            text-align: left; /* Left-aligned title */
+            margin-bottom: 0.5rem; /* Reduced margin */
+            line-height: 1.2;
+            padding-right: 180px; /* Increased space for the profile image */
+        }
+        .roadmap-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #334155;
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-right: 180px; /* Increased space for the profile image */
+        }
+        .profile-image-top-right {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 160px; /* Double size as requested */
+            height: 160px; /* Double size as requested */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1d4ed8; /* Blue border */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            z-index: 10;
+        }
+        .section-intro {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #475569;
+        }
+
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+            margin-left: 1rem; /* Space for the line */
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem; /* Position of the vertical line */
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #93c5fd; /* Light blue line */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2.5rem; /* Space for the dot and line */
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem; /* Vertical alignment of the dot */
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background-color: #1d4ed8; /* Dark blue dot */
+            border: 3px solid #bfdbfe; /* Lighter blue border for the dot */
+            z-index: 1;
+        }
+        .timeline-item-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-item-content {
+            font-size: 1rem;
+            color: #475569;
+        }
+        .timeline-item-content ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            padding-left: 0;
+        }
+        .timeline-item-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Phase specific styling */
+        .phase-section {
+            background-color: #e0f2fe; /* Very light blue for phase background */
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+        }
+        .phase-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0c4a6e; /* Darker blue for phase titles */
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #93c5fd;
+        }
+
+        /* Key Strengths Table */
+        .strengths-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        .strengths-table th, .strengths-table td {
+            border: 1px solid #93c5fd; /* Light blue border */
+            padding: 1rem;
+            text-align: left;
+        }
+        .strengths-table th {
+            background-color: #bfdbfe; /* Light blue for header */
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        .strengths-table td {
+            background-color: #eff6ff; /* Very light blue for table cells */
+        }
+        .strengths-table tr:nth-child(even) td {
+            background-color: #e0f2fe; /* Slightly darker very light blue for even rows */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .roadmap-container {
+                margin: 2rem 1rem;
+                padding: 1rem;
+            }
+            .roadmap-title {
+                font-size: 2rem;
+                padding-right: 0; /* Remove padding on small screens */
+                text-align: center; /* Center align title on small screens */
+            }
+            .roadmap-subtitle {
+                font-size: 1.2rem;
+                padding-right: 0;
+                text-align: center;
+            }
+            .profile-image-top-right {
+                position: static; /* Make it flow with content on small screens */
+                margin: 1rem auto; /* Center it */
+                display: block;
+                width: 120px; /* Adjust size for smaller screens */
+                height: 120px;
+            }
+            .section-intro {
+                font-size: 1rem;
+            }
+            .timeline::before {
+                left: 0.25rem;
+            }
+            .timeline-item {
+                padding-left: 2rem;
+            }
+            .timeline-item::before {
+                left: -0.25rem;
+                width: 1rem;
+                height: 1rem;
+            }
+            .timeline-item-title {
+                font-size: 1.1rem;
+            }
+            .timeline-item-content {
+                font-size: 0.9rem;
+            }
+            .phase-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* List styling for publications/presentations */
+        .content-list {
+            list-style: disc;
+            margin-left: 1.5rem;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+        .content-list li {
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        .content-list li strong {
+            color: #1e3a8a;
+        }
+
+        .visual-summary-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative; /* For positioning text overlays */
+        }
+        .visual-summary-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin-top: 1.5rem;
+        }
+
+        .profile-links-section {
+            padding: 2rem;
+            background-color: #e0f2fe;
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .profile-links-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #93c5fd;
+        }
+        .profile-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            justify-items: center;
+        }
+        .profile-link-item {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            width: 100%;
+            text-align: center;
+        }
+        .profile-link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .profile-link-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #1d4ed8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .profile-link-item a:hover {
+            text-decoration: underline;
+        }
+        .profile-link-item svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor; /* Use current text color for SVG */
+        }
+    </style>
+</head>
+<body>
+    <div class="roadmap-container">
+        <!-- Profile Image Placeholder -->
+        <img src="YOUR_PROFILE_IMAGE_URL_HERE" alt="Arshia Vahedi Profile" class="profile-image-top-right">
+        <!-- Add your profile image URL here. Example: src="https://example.com/your-profile-pic.jpg" -->
+
+        <h1 class="roadmap-title">Visual Roadmap: My Journey as a Neuroscience Innovator</h1>
+        <h2 class="roadmap-subtitle">Arshia Vahedi, MD, Neuroscience Researcher</h2>
+
+        <p class="section-intro">
+            This roadmap charts my dynamic and ambitious journey, illustrating a clear trajectory from foundational excellence to pioneering leadership in computational neuroscience. Each stage builds upon the last, showcasing my relentless drive for knowledge and impact.
+        </p>
+
+        <!-- My Online Presence -->
+        <div class="profile-links-section">
+            <h2>My Online Presence</h2>
+            <p class="text-center text-gray-700 mb-6">Explore my professional profiles and contributions across various platforms:</p>
+            <div class="profile-links-grid">
+                <div class="profile-link-item">
+                    <a href="https://ir.linkedin.com/in/arshia-vahedi" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.325-.028-3.044-1.852-3.044-1.853 0-2.136 1.445-2.136 2.951v5.662H9.554V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.139.92-2.063 2.063-2.063 1.14 0 2.064.924 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm-.007 13.012H3.277V9h4.124v11.445H5.33zM22.227 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.892 24 1.771 24h20.456C23.209 24 24 23.227 24 22.271V1.729C24 .774 23.209 0 22.227 0z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://www.researchgate.net/profile/Arshia-Vahedi-2" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.187 15.656c-.469 0-.859-.391-.859-.859V9.203c0-.469.391-.859.859-.859h.859c.469 0 .859.391.859.859v5.594c0 .469-.391.859-.859.859h-.859zM12 8.344c-2.031 0-3.656 1.625-3.656 3.656s1.625 3.656 3.656 3.656 3.656-1.625 3.656-3.656S14.031 8.344 12 8.344zm-6.187 7.312c-.469 0-.859-.391-.859-.859V9.203c0-.469.391-.859.859-.859h.859c.469 0 .859.391.859.859v5.594c0 .469-.391.859-.859.859h-.859z"/></svg>
+                        ResearchGate
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://scholar.google.com/citations?user=fGsLx-8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.07 15.13c-.22.22-.51.34-.83.34-.32 0-.61-.12-.83-.34-.45-.45-.45-1.17 0-1.62l3.41-3.41c.45-.45 1.17-.45 1.62 0 .45.45.45 1.17 0 1.62l-3.41 3.41zM12 10.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zM12 14c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>
+                        Google Scholar
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://orcid.org/0000-0002-4288-6722" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2.07 15.13c-.22.22-.51.34-.83.34-.32 0-.61-.12-.83-.34-.45-.45-.45-1.17 0-1.62l3.41-3.41c.45-.45 1.17-.45 1.62 0 .45.45.45 1.17 0 1.62l-3.41 3.41zM12 10.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM12 7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zM12 14c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>
+                        ORCID
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://github.com/ArshiaVahedi" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.205 11.385.6.11.82-.26.82-.577v-2.22c-3.338.724-4.043-1.609-4.043-1.609-.546-1.387-1.332-1.758-1.332-1.758-1.09-.745.082-.73.082-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.492.998.108-.775.42-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.12-.3-.53-1.52.12-3.18 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.296-1.552 3.301-1.23 3.301-1.23.65 1.66.24 2.88.12 3.18.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.62-5.475 5.92.43.37.82 1.1.82 2.22v3.293c0 .318.22.69.825.577C20.565 21.799 24 17.302 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://www.coursera.org/learner/arshia-vahedi" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.25c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm0 3.75c-2.485 0-4.5 2.015-4.5 4.5s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.015-4.5-4.5-4.5zm0 10.5c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5 6.5-2.91 6.5-6.5-2.91-6.5-6.5-6.5z"/></svg>
+                        Coursera Profile
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="https://alison.com/profile/34235161" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.25c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm0 3.75c-2.485 0-4.5 2.015-4.5 4.5s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.015-4.5-4.5-4.5zm0 10.5c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5 6.5-2.91 6.5-6.5-2.91-6.5-6.5-6.5z"/></svg>
+                        Alison Profile
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="mailto:arshia.vahedi@neuronet-research.org">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 4H2C.9 4 .01 4.9.01 6L0 18c0 1.1.89 2 1.99 2H22c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-10 6L2 8V6l10 6 10-6v2z"/></svg>
+                        Organizational Email
+                    </a>
+                </div>
+                <div class="profile-link-item">
+                    <a href="mailto:vahedi.arshia@gmail.com">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 4H2C.9 4 .01 4.9.01 6L0 18c0 1.1.89 2 1.99 2H22c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-10 6L2 8V6l10 6 10-6v2z"/></svg>
+                        Personal/Work Email
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Summary Section with Placeholder for User's Image -->
+        <div class="phase-section visual-summary-section">
+            <h2 class="phase-title">My Neuroscience Journey: A Visual Overview</h2>
+            <p class="text-gray-700 mb-4">
+                Please insert the URL of your custom-designed visual roadmap image below. This image should visually summarize your entire career, including key milestones and your progression.
+            </p>
+            <!-- Insert your custom visual roadmap image URL here -->
+            <img id="roadmap-image" src="YOUR_VISUAL_ROADMAP_IMAGE_URL_HERE" alt="A visual roadmap summarizing Arshia Vahedi's neuroscience career." style="width: 100%; max-width: 800px; height: auto; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); margin-top: 1.5rem;">
+            <!-- Example: <img id="roadmap-image" src="https://example.com/my-neuroscience-roadmap.png" ... > -->
+        </div>
+
+
+        <!-- Phase 1: Foundation & Early Accolades -->
+        <div class="phase-section" id="phase-1">
+            <h2 class="phase-title">Phase 1: Foundation & Early Accolades (2007-2018)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">The Spark of Innovation (High School)</h3>
+                    <div class="timeline-item-content">
+                        <ul>
+                            <li>✨ <strong>Action: I founded and managed a robotics non-profit, securing ~$10,000 in funding and fostering STEM education.</strong></li>
+                            <li><strong>Teaching:</strong> I taught <strong>C Programming and Algorithms in Robotics</strong> (2008-2012).</li>
+                            <li>✨ <strong>Recognition: I was awarded the Gold Medal (First Rank) at the IRAN OPEN Junior Robotic Competitions (2009). This early success demonstrated my innate drive for technical excellence and leadership.</strong></li>
+                            <li><strong>Competition:</strong> I competed in over 15 robotics competitions, achieving top ranks, and represented Iran as a member of the national robotics team at the Singapore World RoboCup.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">Building a Scientific Mind (Medical School)</h3>
+                    <div class="timeline-item-content">
+                        <ul>
+                            <li><strong>Education:</strong> I earned my <strong>Doctor of Medicine (MD)</strong> from Zahedan University of Medical Sciences (2011-2018).</li>
+                            <li>✨ <strong>Exceptional Performance: I was awarded the Gold Medal in the 9th National Scientific Olympiad for Medical Students (2016) and named "Best Student Researcher of the University" for two consecutive years (2014, 2015). I also received awards for the 6th Student Olympiad (Art in Medical Education, 2013), Third Rank in Medical Basic Sciences Exam (2013), and Top Cultural Rank of University (2012).</strong></li>
+                            <li>✨ <strong>Leadership in Action: As a leader in the Student Research Committee, I mentored over 100 novice students, reviewed approximately 200 research proposals, and organized 5 annual research congresses, showcasing a commitment to nurturing a scientific community. I designed and taught over 80 research-related workshops.</strong></li>
+                            <li><strong>Early Research Focus:</strong> My thesis on infant neuro-development and cognition laid the groundwork for my future specialization.</li>
+                            <li><strong>Voluntary Experience:</strong> I served as Student Secretary and Director at the Red Crescent (Red Cross) Center, coordinating disaster relief efforts during the Kermanshah earthquake.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2: Clinical Acumen & Advanced Research -->
+        <div class="phase-section" id="phase-2">
+            <h2 class="phase-title">Phase 2: Clinical Acumen & Advanced Research (2019-Present)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">On the Frontlines of Medicine</h3>
+                    <div class="timeline-item-content">
+                        <ul>
+                            <li><strong>Role:</strong> I served as a General Practitioner in Tehran and Zahedan (October 2019 - Present).</li>
+                            <li>✨ <strong>Impact: I provided critical emergency care to over 120 patients daily during the height of the COVID-19 pandemic, demonstrating exceptional resilience and clinical expertise under pressure.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">Deep Dive into the Brain (Postdoctoral Research)</h3>
+                    <div class="timeline-item-content">
+                        <ul>
+                            <li><strong>Affiliation:</strong> I am a Postdoctoral Researcher at CRDRC, Masih Daneshvari Hospital (March 2019 - Present).</li>
+                            <li>✨ <strong>Advanced Methodologies: I initiated and led pioneering studies on brain functional connectivity using Task-based fMRI (with a $12,000 grant) and neurocognitive outcomes with EEG analysis (with a $5,000 grant). I also conducted self-funded research on UVC radiation for SARS-CoV-2 disinfection.</strong></li>
+                            <li>✨ <strong>High-Impact Publications: I analyzed data from over 400 COVID-19 cases, resulting in three peer-reviewed articles and contributing significantly to the field.</strong></li>
+                            <li><strong>Research Development:</strong> I developed innovative research proposals and enhanced research center operations by updating databases and optimizing websites.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3: Pioneering the Future of Neuroscience -->
+        <div class="phase-section" id="phase-3">
+            <h2 class="phase-title">Phase 3: Pioneering the Future of Neuroscience (2024-Present)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">Visionary Leadership</h3>
+                    <div class="timeline-item-content">
+                        <ul>
+                            <li>🚀 <strong>Innovation: I founded and direct the Online Neuroscience Network Research Center (ONNRC) (2025 - Present), a global virtual platform designed to democratize neuroscience research. This initiative highlights my forward-thinking approach to scientific collaboration, engaging ~11 active researchers and securing a ROR identifier.</strong></li>
+                            <li>✨ <strong>Current Research: I am conducting independent, self-funded research leveraging Deep Learning (DL) to investigate brain functional connectivity and neurodegenerative disorders. I have authored a peer-reviewed review article and submitted three additional manuscripts for publication.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-item-title">A Commitment to Lifelong Learning (Recent Certifications & Skills)</h3>
+                    <div class="timeline-item-content">
+                        <h4 class="font-semibold text-md mb-2 text-blue-700">Research Ethics:</h4>
+                        <ul class="list-inside list-disc ml-4 mb-2">
+                            <li>⭐ <strong>TCPS 2: CORE 2022 (Canadian Institutes of Health Research, Oct 2024)</strong></li>
+                        </ul>
+                        <h4 class="font-semibold text-md mb-2 text-blue-700">Neuroscience & AI/ML:</h4>
+                        <ul class="list-inside list-disc ml-4 mb-2">
+                            <li>⭐ <strong>Diploma in Neurophysiology & Neuro-Instrumentation Course (Alison, Jul 2025)</strong></li>
+                            <li>⭐ <strong>Computational Neuroscience Course (University of Washington, Jul 2025)</strong></li>
+                            <li><strong>Digital Signal Processing 1 & 2 (École Polytechnique Fédérale de Lausanne, Jul 2025)</strong></li>
+                            <li><strong>Experimental Methods & Introduction to Systems Biology (Icahn School of Medicine at Mount Sinai, Jun 2025)</strong></li>
+                            <li>⭐ <strong>A Two-week Practical Course on NeuroAI (Neuromatch Academy, Jul 2024)</strong></li>
+                            <li>⭐ <strong>A Three-week Interactive Course on Computational Neuroscience (Neuromatch Academy, Aug 2024)</strong></li>
+                            <li><strong>Introduction to fMRI Image Processing (Interdisciplinary Schools, Apr 2024)</strong></li>
+                            <li><strong>Comprehensive Training Program on Neurotherapy Techniques: TMS, tES, Neurofeedback, Biofeedback (Synapse Scientific Group, Nov 2024)</strong></li>
+                            <li><strong>Brain Signal Processing with MATLAB Software (Synapse Scientific Group, Dec 2023)</strong></li>
+                            <li><strong>EEG and QEEG principles workshop (Synapse Scientific Group, Nov 2023)</strong></li>
+                            <li>⭐ <strong>Medical Neuroscience (Duke University, Ongoing, 2025)</strong></li>
+                            <li><strong>Introduction to Generative AI (Google Cloud, Aug 2023)</strong></li>
+                            <li><strong>Deep Learning Essentials (IBM, Jan 2024)</strong></li>
+                            <li><strong>Machine Learning with Python (IBM, Jan 2024)</strong></li>
+                            <li><strong>Advanced AI: NLP Techniques for Clinical Datasets (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Generative AI: Introduction to Large Language Models (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Machine Learning and AI Foundations: Classification Modeling (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Comprehensive Course of Cognitive Assessment (Iran National Brain Mapping Center, 2021)</strong></li>
+                            <li><strong>Pediatric Neurodevelopmental Evaluation (Mashhad University of Medical Sciences, 2020)</strong></li>
+                            <li><strong>Alzheimer's Disease Master Class (Biogen, 2020)</strong></li>
+                            <li><strong>General Neurofeedback (Farmed Tajhiz Company, 2020)</strong></li>
+                            <li><strong>Brain Signal Processing and its Application in Computational Neuroscience (Iran National Brain Mapping Center, 2017)</strong></li>
+                        </ul>
+                        <h4 class="font-semibold text-md mb-2 text-blue-700">Data Science & Analytics:</h4>
+                        <ul class="list-inside list-disc ml-4 mb-2">
+                            <li>⭐ <strong>Data Science Professional Certificate (KNIME, Apr 2025)</strong></li>
+                            <li><strong>Certified in Data Science & Analytics (HP LIFE, Apr 2024)</strong></li>
+                            <li><strong>Data Science Foundations: Fundamentals (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Statistical Analysis with Wolfram Language (LinkedIn Learning, Jul 2025)</strong></li>
+                            <li><strong>Excel Statistics Essential Training (LinkedIn Learning, Jul 2025)</strong></li>
+                            <li><strong>Statistics Foundations 1, 2, 3, 4 (LinkedIn Learning, Apr-Jul 2025)</strong></li>
+                            <li><strong>Low Code/No-Code Data Literacy with KNIME (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Predictive Analytics with Categorical Data (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>The Non-Technical Skills of Effective Data Scientists (LinkedIn Learning, Apr 2025)</strong></li>
+                        </ul>
+                        <h4 class="font-semibold text-md mb-2 text-blue-700">Programming & Software:</h4>
+                        <ul class="list-inside list-disc ml-4 mb-2">
+                            <li><strong>Programming for Everybody (Getting Started with Python) (University of Michigan, Feb 2024)</strong></li>
+                            <li><strong>Advanced Python: Working With Data (LinkedIn Learning, Feb 2024)</strong></li>
+                            <li><strong>Python: Advanced Design Patterns (LinkedIn Learning, Feb 2024)</strong></li>
+                            <li>⭐ <strong>Docker Foundations Professional Certificate (Docker, Apr 2025)</strong></li>
+                            <li><strong>Learning Docker Compose (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Docker: Your First Project (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Learning Docker (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Getting Started with Python for Finance (LinkedIn Learning, May 2025)</strong></li>
+                            <li><strong>SQL for Finance Professionals (LinkedIn Learning, May 2025)</strong></li>
+                        </ul>
+                        <h4 class="font-semibold text-md mb-2 text-blue-700">Leadership & Professional Development:</h4>
+                        <ul class="list-inside list-disc ml-4 mb-2">
+                            <li>⭐ <strong>CFI Financial Analysis and Modeling Professional Certificate (CFI, Jun 2025)</strong></li>
+                            <li><strong>CFI Corporate Finance Foundations Professional Certificate (CFI, May 2025)</strong></li>
+                            <li>⭐ <strong>Negotiation Professional Certificate (American Negotiation Institute, Apr 2025)</strong></li>
+                            <li><strong>Conflict Resolution Foundations (NASBA, Jan 2025)</strong></li>
+                            <li><strong>Project Management: Healthcare Projects (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Leading and Working in Teams (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Mastering Communications as a Leader (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Strategies for Effective Leadership Teams (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Professional Networking (LinkedIn Learning, Mar 2024)</strong></li>
+                            <li><strong>Mastering Google Calendar, Mastering my Time (Udemy, Feb 2024)</strong></li>
+                            <li><strong>Professional diploma in office administration (Udemy, Feb 2024)</strong></li>
+                            <li><strong>Executive Diploma in Business Administration (MTF Institute, Jan 2024)</strong></li>
+                            <li><strong>How to Be Both Assertive and Likable (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>How to Prepare for Your Negotiations (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>When Negotiation's about More than Money (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Strategic Negotiation (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Nano Tips to Speak Up in Meetings (LinkedIn Learning, Apr 2025)</strong></li>
+                            <li><strong>Transform Your Days with Strategic Time Blocking (LinkedIn Learning, Mar 2025)</strong></li>
+                            <li><strong>Nano Tips to Sharpen Your Critical Thinking (LinkedIn Learning, Jan 2024)</strong></li>
+                            <li><strong>How to Make My Voice Heard (LinkedIn Learning, May 2025)</strong></li>
+                            <li><strong>Multinational Communication in the Workplace (LinkedIn Learning, Jun 2025)</strong></li>
+                            <li><strong>Writing in Plain Language (LinkedIn Learning, Jan 2024)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Research Contributions -->
+        <div class="phase-section" id="research-contributions">
+            <h2 class="phase-title">Key Research Contributions</h2>
+            <h3 class="font-semibold text-lg mb-2 text-blue-800">Publications (14+):</h3>
+            <ul class="content-list">
+                <li>⭐ <strong>Therapeutic Approaches in Movement Disorders: A Narrative Review</strong> (Brain Science Advances, June 2025)</li>
+                <li>⭐ <strong>Gamma Oscillations in Neurodegenerative Diseases: Pathophysiological Significance and Therapeutic Potential</strong> (The Egyptian Journal of Neurology, Psychiatry and Neurosurgery. 2025. {Under peer review})</li>
+                <li>⭐ <strong>Generative Adversarial Networks for Enhancing EEG Functional Connectivity Analysis in Neuroscience</strong> (eNeuro. 2025. {Under peer review})</li>
+                <li><strong>Cognitive Reserve and Synaptic Plasticity: Unraveling the Brain's Adaptive Capacity in Alzheimer's Disease</strong> (Journal of Clinical Pathology Research. 2025. 1(1): 1-7.)</li>
+                <li><strong>The relationship between perinatal and postnatal factors and cognitive development of healthy toddlers</strong> (Journal Of Comprehensive Pediatrics. 2024)</li>
+                <li><strong>Large infratentorial cystic oligodendroglioma in a pregnant patient: A case report of a rare presentation and literature review</strong> (Clinical Case Reports, 2022)</li>
+                <li>⭐ <strong>No clinical benefit of high dose corticosteroid administration in patients with COVID-19: A preliminary report of a randomized clinical trial</strong> (European Journal of Pharmacology, 2021)</li>
+                <li>⭐ <strong>Evaluating the effects of Intravenous Immunoglobulin (IVIg) on the management of severe COVID-19 cases: A randomized controlled trial</strong> (International immunopharmacology, 2021)</li>
+                <li><strong>Clinical features and outcomes of ICU patients with COVID-19 infection in Tehran, Iran: a single-centered retrospective cohort study</strong> (Tanaffos, 2020)</li>
+                <li><strong>Serum levels of selenium and zinc in patients with breast cancer: A case-control study</strong> (International Journal of Cancer Management, 2017)</li>
+                <li><strong>Rituximab for refractory subcutaneous Sweet's syndrome in chronic lymphocytic leukemia: A case report</strong> (Molecular and Clinical Oncology, 2016)</li>
+                <li><strong>Prevalence of Intestinal Parasites in Medical Diagnostic Laboratories, Zahedan University of Medical Sciences-Iran</strong> (Int J Curr Microbiol App Sci, 2015)</li>
+                <li><strong>The awareness of nurses in relation to the prevention of hospital-acquired infections in Zahedan's teaching hospitals- 2014</strong> (International Journal of Pharmacy and Technology, 2016)</li>
+                <li><strong>The Analgesic Effect of Hydro-alcoholic Extract of Carum carvi on Female Rats</strong> (Leiden International Medical Student Conference 9, 2015)</li>
+            </ul>
+
+            <h3 class="font-semibold text-lg mb-2 text-blue-800">Presentations:</h3>
+            <ul class="content-list">
+                <li>⭐ <strong>Exploring the Relationship between Sleep Duration and Brain Functional Connectivity During Motor Task Using fMRI HCP Data</strong> (Neuromatch Academy Course Projects, 2024)</li>
+                <li><strong>Prevalence of Myocardial Infarctions in patients admitted in CCU yards of Zahedan hospitals and their cardiac enzyme status.</strong> (2nd Provincial Applied Research Congress of Medical Sciences Students, 2015)</li>
+                <li><strong>The effects of Lemon verbena hydroalcoholic extract on seizure induced by pentylenetetrazol (PTZ) in Mice.</strong> (19th Annual Research Congress of Iranian Medical Students, 2018)</li>
+                <li><strong>Study of IL-12 and IL-13 serum levels in patients with helicobacter pylori infection and their relationship with VacA and CagA virulence factors.</strong> (14th Students International Conference on Biomedical and Interdisciplinary Research, 2013)</li>
+                <li><strong>Prevalence of G6PD-Deficiency in umbilical cord blood of newborns and their clinical symptoms in infancy.</strong> (15th Annual Research Congress of Iran's Medical Sciences Students, 2014)</li>
+                <li><strong>Rituximab for refractory subcutaneous Sweet's syndrome in patients with chronic lymphocytic leukemia.</strong> (3rd Provincial Applied Research Congress of Medical Sciences Students, 2016)</li>
+                <li><strong>Knowledge and Practice of Medical Health Workers in Iranshahr about AIDS.</strong> (11th Annual Research Congress of Eastern Medical Sciences Students, 2016)</li>
+                <li><strong>Nutritional habits of pregnant women referring to Seyyedo-Shohada health center in Zahedan.</strong> (The National Pregnancy Health Conference, 2015)</li>
+                <li><strong>Study of time period between the onset of chest pain and arriving at the hospital and its outcomes in Myocardial Infarction (MI) patients.</strong> (15th Annual Research Congress of Iran's Medical Students, 2014)</li>
+            </ul>
+        </div>
+
+        <!-- Key Strengths & Highlights Table -->
+        <div class="phase-section">
+            <h2 class="phase-title">Key Strengths & Highlights</h2>
+            <table class="strengths-table">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Evidence of Excellence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pioneering Spirit</strong></td>
+                        <td>✨ <strong>Founder of two research-focused organizations (a high school robotics non-profit and the global ONNRC).</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Elite Academic Achiever</strong></td>
+                        <td>✨ <strong>A consistent Gold Medalist and "Best Researcher" at both national and university levels.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Neuroscience Expertise</strong></td>
+                        <td>✨ <strong>Deep, hands-on experience in Computational Neuroscience, fMRI, EEG, and NeuroAI, supported by extensive, recent coursework from world-class institutions.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proven Research Impact</strong></td>
+                        <td>✨ <strong>14+ publications (including work under the name Abdolbaset Vahedi Tabas), with a Google Scholar citation count of over 260.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leadership & Mentorship</strong></td>
+                        <td>✨ <strong>A proven track record of mentoring students, securing research grants, and building collaborative scientific communities.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technical & Analytical Prowess</strong></td>
+                        <td><strong>Highly proficient in Python, MATLAB, Deep Learning, and a comprehensive suite of data analysis and research software.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resilient Clinician</strong></td>
+                        <td><strong>Demonstrated exceptional clinical skill and dedication on the frontlines of the COVID-19 pandemic.</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
